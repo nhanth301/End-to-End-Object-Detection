@@ -1,6 +1,0 @@
-train: ../train/images
-val: ../test/images
-
-nc: 6
-names: ['hello-pyG5', 'love', 'no', 'please', 'thanks', 'yes']
-
