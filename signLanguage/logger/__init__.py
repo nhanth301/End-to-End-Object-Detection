@@ -1,19 +1,24 @@
-import logging
 import os
+import sys
+import logging
 from datetime import datetime
-from from_root import from_root
-
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s: %(message)s]"
 
-log_path = os.path.join(from_root(), 'log', LOG_FILE)
+log_dir = "logs"
+log_filepath = os.path.join(log_dir,LOG_FILE)
+os.makedirs(log_dir, exist_ok=True)
 
-os.makedirs(log_path, exist_ok=True)
-
-lOG_FILE_PATH = os.path.join(log_path, LOG_FILE)
 
 logging.basicConfig(
-    filename=lOG_FILE_PATH,
-    format= "[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s",
-    level= logging.INFO
+    level= logging.INFO,
+    format= logging_str,
+
+    handlers=[
+        logging.FileHandler(log_filepath),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
+
+logger = logging.getLogger("signLanguage")
