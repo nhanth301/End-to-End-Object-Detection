@@ -9,10 +9,10 @@ DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 
-DATA_DOWNLOAD_URL: str = "https://github.com/nhanth301/data_repo/raw/main/signlanguage.zip"
+DATA_DOWNLOAD_URL: str = "https://github.com/nhanth301/data_repo/raw/main/signv3.zip"
 
 """
-Data Validation realted constant start with DATA_VALIDATION VAR NAME
+Data Validation related constant start with DATA_VALIDATION VAR NAME
 """
 
 DATA_VALIDATION_DIR_NAME:str = "data_validation"
@@ -28,5 +28,12 @@ MODEL_TRAINER_DIR_NAME:str = "model_trainer"
 
 MODEL_TRAINER_PRETRAINED_WEIGHT_NAME:str = "yolov5s.pt"
 
-MODEL_TRAINER_NO_EPOCHS:int = 20
+MODEL_TRAINER_NO_EPOCHS:int = 50
 MODEL_TRAINER_BATCH_SIZE:int = 4
+
+
+"""
+MODEL PUSHER related constant start with MODEL_PUSHER var name
+"""
+BUCKET_NAME = "sign-lang-301124"
+S3_MODEL_NAME = "best.pt"
